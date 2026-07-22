@@ -1,10 +1,12 @@
 # Baseline Slicer repository, change this when rebasing
-GIT_URL = "https://github.com/Slicer/Slicer.git"
-GIT_REVISION = "55f38b57fc9d9a80da0fce51aa12d82064c101cc"
+GIT_URL = "https://github.com/UlysseDurand/Slicer/"
+GIT_REVISION = "00876fac230dfad249179f28e1bfb33526a7b7ab"
 
 # Directories used by the scripts
 SLICER_DIR = "Slicer"
 PATCH_DIR = "patch"
+VTK_WHEEL = "/home/ulysse-durand/Downloads/artifacts/build/dist/vtk-9.7.20260627.dev0+mr96942-cp314-cp314-manylinux2014_x86_64.manylinux_2_17_x86_64.whl"
+VTK_SDK_WHEEL = "/home/ulysse-durand/Downloads/artifacts/build/wheel_sdks/vtk_sdk-9.7.20260627.dev0-cp314-cp314-linux_x86_64.whl"
 
 import subprocess
 import os

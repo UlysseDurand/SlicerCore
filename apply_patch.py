@@ -12,6 +12,7 @@ from pathlib import Path
 import shutil
 
 from common import execute_process, mkpath, GIT_URL, GIT_REVISION, SLICER_DIR, PATCH_DIR
+from set_vtk_version import main as set_version
 
 
 def is_patch(name: Path) -> bool:
@@ -55,6 +56,7 @@ def main() -> None:
         apply_patch(PATCH_DIR, SLICER_DIR, Path(*file.parts[1:])) # remove "PATCH_DIR/" part
 
     # Commit the patches
+    set_version()
     execute_process("git add --all", SLICER_DIR)
     execute_process('git config user.email "kitware@kitware.fr"', SLICER_DIR)
     execute_process('git config user.name "Kitware SAS"', SLICER_DIR)
