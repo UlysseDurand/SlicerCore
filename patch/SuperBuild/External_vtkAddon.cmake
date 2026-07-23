@@ -23,6 +23,7 @@ if(NOT DEFINED vtkAddon_DIR AND NOT Slicer_USE_SYSTEM_${proj})
 
   set(EXTERNAL_PROJECT_OPTIONAL_CMAKE_CACHE_ARGS
     "-DCMAKE_PREFIX_PATH:PATH=${CMAKE_PREFIX_PATH}"
+    "-DvtkAddon_INSTALL_NO_DEVELOPMENT:BOOL=OFF"
     "-DvtkAddon_WRAP_PYTHON:BOOL=ON"
     "-DPYTHON_EXECUTABLE:FILEPATH=${Python3_EXECUTABLE}"
     "-DPYTHON_INCLUDE_DIRS:PATH=${Python3_INCLUDE_DIR}"
@@ -72,7 +73,7 @@ if(NOT DEFINED vtkAddon_DIR AND NOT Slicer_USE_SYSTEM_${proj})
 
   ExternalProject_GenerateProjectDescription_Step(${proj})
 
-  set(vtkAddon_DIR ${EP_INSTALL_DIR}/lib/CMake/vtkAddon)
+  set(vtkAddon_DIR ${EP_INSTALL_DIR}/vtkAddon/lib/cmake/vtkAddon)
   set(vtkAddon_PYTHON_DIR "${EP_INSTALL_DIR}/${python_destination}")
 
   # Add path to SlicerLauncherSettings.ini
