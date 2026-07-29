@@ -11,13 +11,13 @@ if(NOT DEFINED vtkAddon_DIR AND NOT Slicer_USE_SYSTEM_${proj})
 
   ExternalProject_SetIfNotDefined(
     Slicer_${proj}_GIT_REPOSITORY
-    "${EP_GIT_PROTOCOL}://github.com/AlexyPellegrini/vtkAddon.git"
+    "${EP_GIT_PROTOCOL}://github.com/UlysseDurand/vtkAddon.git"
     QUIET
   )
 
   ExternalProject_SetIfNotDefined(
     Slicer_${proj}_GIT_TAG
-    "python-dev-cmake"
+    "bump"
     QUIET
   )
 
