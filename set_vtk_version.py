@@ -7,13 +7,14 @@ import sys
 # This is a simple regex that matches most valid python package version
 VERSION_PATTERN = r'([1-9][0-9]*!)?(0|[1-9][0-9]*)(\.(0|[1-9][0-9]*))*((a|b|rc)(0|[1-9][0-9]*))?(\.post(0|[1-9][0-9]*))?(\.dev(0|[1-9][0-9]*))?'
 # List of package name to replace version in given file
-FILES = {
-    "vtk": Path(SLICER_DIR) / "SlicerCore" / "pyproject.toml",
-    "vtk-sdk": Path(SLICER_DIR) / "SlicerCore" / "pyproject.toml",
-    "vtk-sdk": Path(SLICER_DIR) / "SlicerCore" / "tests" / "packages" / "build_module" / "pyproject.toml",
-    "vtk-sdk": Path(SLICER_DIR) / "SlicerCore" / "tests" / "packages" / "find_package" / "pyproject.toml",
-    "vtk-sdk": Path(SLICER_DIR) / "SlicerCoreSDK" / "pyproject.toml",
-}
+FILES = [
+    ("vtk", Path(SLICER_DIR) / "SlicerCore" / "pyproject.toml"),
+    ("vtk-sdk", Path(SLICER_DIR) / "SlicerCore" / "pyproject.toml"),
+    ("vtk-sdk", Path(SLICER_DIR) / "SlicerCore" / "tests" / "packages" / "build_module" / "pyproject.toml"),
+    ("vtk-sdk", Path(SLICER_DIR) / "SlicerCore" / "tests" / "packages" / "find_package" / "pyproject.toml"),
+    ("vtk", Path(SLICER_DIR) / "SlicerCoreSDK" / "pyproject.toml"),
+    ("vtk-sdk", Path(SLICER_DIR) / "SlicerCoreSDK" / "pyproject.toml"),
+]
 
 
 def patch_version(pyproject: Path, name: str, version: str):
@@ -35,7 +36,7 @@ def main():
         print(f"Given version, {version}, is not a valid version identifier")
         exit(1)
 
-    for package, file in FILES.items():
+    for package, file in FILES:
         patch_version(file, package, version)
 
 
