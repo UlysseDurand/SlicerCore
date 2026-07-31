@@ -2,7 +2,7 @@
 requires = [
   "scikit-build-core",
   "slicer-core-sdk",
-  "vtk-sdk==9.6.0"
+  "vtk-sdk @ file:///home/ulysse-durand/git/SlicerCore/vtk/build/wheel_sdks/vtk_sdk-9.6.2.dev0-cp312-cp312-linux_x86_64.whl"
 ]
 build-backend = "scikit_build_core.build"
 

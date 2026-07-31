@@ -1,7 +1,7 @@
 [build-system]
 requires = [
   "scikit-build-core",
-  "vtk-sdk==9.6.0",
+  "vtk-sdk @ file:///home/ulysse-durand/git/SlicerCore/vtk/build/wheel_sdks/vtk_sdk-9.6.2.dev0-cp312-cp312-linux_x86_64.whl",
   "vtk-sdk-python-wheel-helper"
 ]
 build-backend = "scikit_build_core.build"
@@ -14,7 +14,7 @@ cmake.args = ["-GNinja", "-DCMAKE_BUILD_TYPE=Release", "-DBUILD_SDK=OFF"]
 [project]
 name = "slicer-core"
 version = "5.11.0.6"
-dependencies = ["vtk==9.6.0"]
+dependencies = ["vtk @ file:///home/ulysse-durand/git/SlicerCore/vtk/build/dist/vtk-9.6.2.dev0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl"]
 requires-python = ">=3.10"
 readme = "README.md"
 license = { text = "Apache 2.0 License" }
